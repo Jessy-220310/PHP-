@@ -1,0 +1,3 @@
+Hello Students
+This is new line using fwrite()
+Locked writing example
