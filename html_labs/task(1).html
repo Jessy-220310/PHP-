@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Inbox UI</title>
+  <link rel="stylesheet" href="task(1).css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="compose" id="composeBtn">Compose</div>
+
+    <ul class="menu">
+      <li>Inbox <span class="badge">2</span></li>
+      <li>Starred</li>
+      <li>Unread</li>
+      <li>Important</li>
+      <li>Sent</li>
+      <li>Drafts <span class="badge">3</span></li>
+      <li>Spam</li>
+      <li>Trash</li>
+    </ul>
+  </div>
+
+  <!-- Main Area -->
+  <div class="main">
+
+    <div class="topbar">
+      <input class="search" type="text" placeholder="Search mail..." id="searchBox"/>
+    </div>
+
+    <div class="content">
+
+      <!-- Emails -->
+      <div class="emails">
+        <div class="tabs">
+          <div>All</div>
+          <div>Unread</div>
+          <div>Starred</div>
+          <div>Important</div>
+        </div>
+
+        <table id="emailTable">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>Subject</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Dany</td>
+              <td>Latest project updates</td>
+              <td>10:32 AM</td>
+            </tr>
+            <tr>
+              <td>Emma Watson</td>
+              <td>Monthly marketing report</td>
+              <td>Yesterday</td>
+            </tr>
+            <tr>
+              <td>Sia</td>
+              <td>Invoice for services</td>
+              <td>Apr 18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="right">
+        <div class="card">
+          <h3>Calendar</h3>
+          <p>Meeting with Team</p>
+          <p>2:00 PM</p>
+        </div>
+
+        <div class="card">
+          <h3>Quick Notes</h3>
+          <input type="text" id="noteInput" placeholder="Add a note..." />
+          <button id="addNoteBtn">Add</button>
+          <ul id="notesList"></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="task(1).js"></script>
+</body>
+</html>
