@@ -8,12 +8,15 @@
   <h2>Google Login with Firebase</h2>
   <button id="login">Login with Google</button>
   <button id="logout">Logout</button>
+  <button id="githubLogin">Login with GitHub</button>
 
   <p id="user"></p>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { GithubAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
 
     // 🔑 PASTE YOUR FIREBASE KEYS HERE
     const firebaseConfig = {
@@ -24,6 +27,17 @@
   messagingSenderId: "269296431584",
   appId: "1:269296431584:web:f35f525648e5a006037b85",
   measurementId: "G-5YHE1VQEKS"
+};
+const githubProvider = new GithubAuthProvider();
+
+document.getElementById("githubLogin").onclick = async () => {
+  try {
+    const result = await signInWithPopup(auth, githubProvider);
+    alert("Welcome " + result.user.email);
+  } catch (error) {
+    console.log(error);
+    alert(error.message);
+  }
 };
 
 // Initialize Firebase
